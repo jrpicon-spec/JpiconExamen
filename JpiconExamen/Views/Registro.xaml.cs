@@ -8,6 +8,7 @@ public partial class Registro : ContentPage
     private const decimal CostoCurso = 1500m;
     private readonly string _usuario;
     private decimal? _pagoMensual;
+    private bool? _escritorioActual;
 
     public Registro(string usuario)
     {
@@ -19,7 +20,11 @@ public partial class Registro : ContentPage
     // Ajusta solo la distribución visual para escritorio y dispositivos estrechos.
     private void OnPageSizeChanged(object? sender, EventArgs e)
     {
-        var escritorio = Width >= 760;
+        var escritorio = Width >= 960;
+        if (_escritorioActual == escritorio)
+            return;
+
+        _escritorioActual = escritorio;
         FormLayout.ColumnDefinitions = escritorio
             ? new ColumnDefinitionCollection
             {
@@ -34,7 +39,6 @@ public partial class Registro : ContentPage
         FormLayout.RowDefinitions = escritorio
             ? new RowDefinitionCollection
             {
-                new() { Height = GridLength.Auto },
                 new() { Height = GridLength.Auto }
             }
             : new RowDefinitionCollection
@@ -46,9 +50,6 @@ public partial class Registro : ContentPage
 
         Grid.SetRow(StudentCard, escritorio ? 0 : 1);
         Grid.SetColumn(StudentCard, escritorio ? 1 : 0);
-        Grid.SetRow(VerResumenButton, escritorio ? 1 : 2);
-        Grid.SetColumn(VerResumenButton, 0);
-        Grid.SetColumnSpan(VerResumenButton, escritorio ? 2 : 1);
     }
 
     private void OnPaisChanged(object? sender, EventArgs e)

@@ -5,8 +5,8 @@
              Title="Login"
              NavigationPage.HasNavigationBar="False">
     <Grid Padding="22">
-        <ScrollView VerticalOptions="Center">
-            <VerticalStackLayout Spacing="0" HorizontalOptions="Center" MaximumWidthRequest="480">
+        <ScrollView HorizontalOptions="Fill" VerticalOptions="Fill">
+            <VerticalStackLayout Spacing="0" HorizontalOptions="Center" VerticalOptions="Center" MaximumWidthRequest="480">
                 <Border Style="{StaticResource CardStyle}" Padding="34,32">
                     <VerticalStackLayout Spacing="0">
                         <Border WidthRequest="76" HeightRequest="76" BackgroundColor="{StaticResource Navy}" StrokeThickness="0" StrokeShape="RoundRectangle 24" HorizontalOptions="Center">

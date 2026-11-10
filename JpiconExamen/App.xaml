@@ -43,19 +43,19 @@
                 <Setter Property="PlaceholderColor" Value="{StaticResource Muted}" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="FontSize" Value="15" />
-                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="MinimumHeightRequest" Value="48" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
             </Style>
             <Style TargetType="Picker">
                 <Setter Property="TextColor" Value="{StaticResource Ink}" />
                 <Setter Property="TitleColor" Value="{StaticResource Muted}" />
                 <Setter Property="FontSize" Value="15" />
-                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="MinimumHeightRequest" Value="48" />
             </Style>
             <Style TargetType="DatePicker">
                 <Setter Property="TextColor" Value="{StaticResource Ink}" />
                 <Setter Property="FontSize" Value="15" />
-                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="MinimumHeightRequest" Value="48" />
             </Style>
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource Teal}" />
