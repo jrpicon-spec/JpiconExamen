@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JpiconExamen.Views.Resumen"
              Title="Resumen">
-    <ScrollView>
+    <Grid>
+      <ScrollView HorizontalOptions="Fill" VerticalOptions="Fill">
         <VerticalStackLayout Padding="24,22,24,32" Spacing="20" HorizontalOptions="Center" MaximumWidthRequest="850">
             <VerticalStackLayout Spacing="14">
                 <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Border}" StrokeThickness="1" StrokeShape="RoundRectangle 14" Padding="14,10" HorizontalOptions="End">
@@ -44,5 +45,6 @@
                 <Label Text="El pago total incluye el monto inicial y las cuatro cuotas mensuales." FontSize="13" TextColor="{StaticResource Navy}" />
             </Border>
         </VerticalStackLayout>
-    </ScrollView>
+      </ScrollView>
+    </Grid>
 </ContentPage>
