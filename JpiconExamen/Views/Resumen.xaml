@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JpiconExamen.Views.Resumen"
+             Title="Resumen">
+    <ScrollView>
+        <VerticalStackLayout Padding="24,22,24,32" Spacing="20" HorizontalOptions="Center" MaximumWidthRequest="850">
+            <VerticalStackLayout Spacing="14">
+                <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Border}" StrokeThickness="1" StrokeShape="RoundRectangle 14" Padding="14,10" HorizontalOptions="End">
+                    <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                        <Border WidthRequest="9" HeightRequest="9" BackgroundColor="{StaticResource Teal}" StrokeThickness="0" StrokeShape="RoundRectangle 5" VerticalOptions="Center" />
+                        <Label x:Name="UsuarioConectadoLabel" FontSize="13" TextColor="{StaticResource Navy}" FontAttributes="Bold" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+                <VerticalStackLayout Spacing="3">
+                    <Label Text="RESUMEN" Style="{StaticResource TitleLabelStyle}" HorizontalTextAlignment="Start" />
+                    <Label Text="Detalle de inscripción y plan de pagos" FontSize="14" TextColor="{StaticResource Muted}" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <Border Style="{StaticResource CardStyle}" Padding="26,18">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*" RowSpacing="2" ColumnSpacing="24">
+                    <Label Text="Nombre" Grid.Row="0" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="NombreLabel" Grid.Row="0" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Apellido" Grid.Row="1" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="ApellidoLabel" Grid.Row="1" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Edad" Grid.Row="2" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="EdadLabel" Grid.Row="2" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Fecha" Grid.Row="3" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="FechaLabel" Grid.Row="3" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Ciudad" Grid.Row="4" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="CiudadLabel" Grid.Row="4" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="País" Grid.Row="5" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="PaisLabel" Grid.Row="5" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Monto inicial" Grid.Row="6" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="MontoInicialLabel" Grid.Row="6" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Pago mensual" Grid.Row="7" Grid.Column="0" Style="{StaticResource SummaryLabelStyle}" />
+                    <Label x:Name="PagoMensualLabel" Grid.Row="7" Grid.Column="1" Style="{StaticResource SummaryValueStyle}" />
+                    <Label Text="Pago total" Grid.Row="8" Grid.Column="0" Style="{StaticResource SummaryTotalLabelStyle}" />
+                    <Label x:Name="PagoTotalLabel" Grid.Row="8" Grid.Column="1" Style="{StaticResource SummaryTotalValueStyle}" />
+                </Grid>
+            </Border>
+            <Border BackgroundColor="{StaticResource TealSoft}" Stroke="#B9E8E2" StrokeThickness="1" StrokeShape="RoundRectangle 14" Padding="16,13" HorizontalOptions="Start">
+                <Label Text="El pago total incluye el monto inicial y las cuatro cuotas mensuales." FontSize="13" TextColor="{StaticResource Navy}" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

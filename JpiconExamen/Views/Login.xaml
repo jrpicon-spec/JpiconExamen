@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JpiconExamen.Views.Login"
+             Title="Login"
+             NavigationPage.HasNavigationBar="False">
+    <Grid Padding="22">
+        <ScrollView VerticalOptions="Center">
+            <VerticalStackLayout Spacing="0" HorizontalOptions="Center" MaximumWidthRequest="480">
+                <Border Style="{StaticResource CardStyle}" Padding="34,32">
+                    <VerticalStackLayout Spacing="0">
+                        <Border WidthRequest="76" HeightRequest="76" BackgroundColor="{StaticResource Navy}" StrokeThickness="0" StrokeShape="RoundRectangle 24" HorizontalOptions="Center">
+                            <Grid>
+                                <Label Text="IS" TextColor="White" FontSize="27" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+                                <BoxView HeightRequest="4" WidthRequest="24" BackgroundColor="{StaticResource Teal}" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15" CornerRadius="2" />
+                            </Grid>
+                        </Border>
+                        <Label Text="INSTITUTO SUPERIOR SUDAMERICANO" FontSize="12" FontAttributes="Bold" CharacterSpacing="0.8" TextColor="{StaticResource Muted}" HorizontalTextAlignment="Center" Margin="0,18,0,4" />
+                        <Label Text="LOGIN" Style="{StaticResource TitleLabelStyle}" FontSize="25" Margin="0,8,0,4" />
+                        <Label Text="Ingresa tus credenciales para continuar" FontSize="14" TextColor="{StaticResource Muted}" HorizontalTextAlignment="Center" Margin="0,0,0,24" />
+
+                        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="86,*" RowSpacing="14" ColumnSpacing="12">
+                            <Label Text="◉  Usuario" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource FieldShellStyle}">
+                                <Entry x:Name="UsuarioEntry" Placeholder="Ingresa tu usuario" AutomationId="UsuarioEntry" />
+                            </Border>
+                            <Label Text="▣  Contraseña" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource FieldShellStyle}">
+                                <Entry x:Name="ContrasenaEntry" Placeholder="Ingresa tu contraseña" IsPassword="True" AutomationId="ContrasenaEntry" />
+                            </Border>
+                        </Grid>
+
+                        <Button Text="INICIAR SESIÓN" Clicked="OnIniciarSesionClicked" AutomationId="IniciarSesionButton" Margin="0,24,0,0" />
+                        <Label Text="Acceso al registro académico" FontSize="12" TextColor="{StaticResource Muted}" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

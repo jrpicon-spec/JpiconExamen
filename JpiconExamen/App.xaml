@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JpiconExamen.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="Navy">#1E3A5F</Color>
+            <Color x:Key="Blue">#2563EB</Color>
+            <Color x:Key="Teal">#0D9488</Color>
+            <Color x:Key="Ink">#1E293B</Color>
+            <Color x:Key="Muted">#64748B</Color>
+            <Color x:Key="Surface">#FFFFFF</Color>
+            <Color x:Key="Canvas">#F1F5F9</Color>
+            <Color x:Key="Border">#E2E8F0</Color>
+            <Color x:Key="FieldFill">#F8FAFC</Color>
+            <Color x:Key="TealSoft">#E6F6F4</Color>
+
+            <Shadow x:Key="CardShadow" Brush="#1E3A5F" Opacity="0.09" Radius="22" Offset="0,8" />
+            <Shadow x:Key="ButtonShadow" Brush="#0D9488" Opacity="0.18" Radius="12" Offset="0,4" />
+
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource Canvas}" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Ink}" />
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+            </Style>
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Navy}" />
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CharacterSpacing" Value="1.2" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="SectionTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Navy}" />
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource Ink}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource Muted}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="{StaticResource Ink}" />
+                <Setter Property="TitleColor" Value="{StaticResource Muted}" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HeightRequest" Value="48" />
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="{StaticResource Ink}" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="HeightRequest" Value="48" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Teal}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="CharacterSpacing" Value="0.4" />
+                <Setter Property="Padding" Value="20,15" />
+                <Setter Property="MinimumHeightRequest" Value="52" />
+                <Setter Property="Shadow" Value="{StaticResource ButtonShadow}" />
+            </Style>
+            <Style x:Key="CardStyle" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="{StaticResource Surface}" />
+                <Setter Property="Stroke" Value="{StaticResource Border}" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 20" />
+                <Setter Property="Padding" Value="22" />
+                <Setter Property="Shadow" Value="{StaticResource CardShadow}" />
+            </Style>
+            <Style x:Key="FieldShellStyle" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="{StaticResource FieldFill}" />
+                <Setter Property="Stroke" Value="{StaticResource Border}" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+                <Setter Property="Padding" Value="8,0" />
+            </Style>
+            <Style x:Key="SummaryLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Muted}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Padding" Value="4,13" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="SummaryValueStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Ink}" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="Padding" Value="4,13" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+            <Style x:Key="SummaryTotalLabelStyle" TargetType="Label" BasedOn="{StaticResource SummaryLabelStyle}">
+                <Setter Property="TextColor" Value="{StaticResource Teal}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Padding" Value="4,17" />
+            </Style>
+            <Style x:Key="SummaryTotalValueStyle" TargetType="Label" BasedOn="{StaticResource SummaryValueStyle}">
+                <Setter Property="TextColor" Value="{StaticResource Teal}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Padding" Value="4,17" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

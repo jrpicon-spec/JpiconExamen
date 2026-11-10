@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JpiconExamen.Views.Registro"
+             Title="Registro"
+             SizeChanged="OnPageSizeChanged">
+    <ScrollView>
+        <VerticalStackLayout Padding="24,22,24,32" Spacing="20" HorizontalOptions="Center" MaximumWidthRequest="1050">
+            <VerticalStackLayout Spacing="14">
+                <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Border}" StrokeThickness="1" StrokeShape="RoundRectangle 14" Padding="14,10" HorizontalOptions="End">
+                    <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                        <Border WidthRequest="9" HeightRequest="9" BackgroundColor="{StaticResource Teal}" StrokeThickness="0" StrokeShape="RoundRectangle 5" VerticalOptions="Center" />
+                        <Label x:Name="UsuarioConectadoLabel" FontSize="13" TextColor="{StaticResource Navy}" FontAttributes="Bold" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+                <VerticalStackLayout Spacing="3">
+                    <Label Text="REGISTRO" Style="{StaticResource TitleLabelStyle}" HorizontalTextAlignment="Start" FontSize="27" />
+                    <Label Text="Completa la información de inscripción y pago" FontSize="14" TextColor="{StaticResource Muted}" />
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <Grid x:Name="FormLayout" RowDefinitions="Auto,Auto" ColumnDefinitions="1.15*,*" RowSpacing="18" ColumnSpacing="18">
+                <Border x:Name="FinancialCard" Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="16">
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="Inscripción y pagos" Style="{StaticResource SectionTitleStyle}" />
+                            <Label Text="Fecha, ubicación y plan económico" FontSize="13" TextColor="{StaticResource Muted}" />
+                        </VerticalStackLayout>
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="118,*" RowSpacing="12" ColumnSpacing="12">
+                            <Label Text="Fecha" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource FieldShellStyle}">
+                                <DatePicker x:Name="FechaPicker" Format="dd/MM/yyyy" />
+                            </Border>
+                            <Label Text="País" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource FieldShellStyle}">
+                                <Picker x:Name="PaisPicker" Title="Selecciona un país" SelectedIndexChanged="OnPaisChanged">
+                                    <Picker.Items>
+                                        <x:String>Ecuador</x:String>
+                                        <x:String>Colombia</x:String>
+                                        <x:String>Perú</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </Border>
+                            <Label Text="Ciudad" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource FieldShellStyle}">
+                                <Picker x:Name="CiudadPicker" Title="Selecciona una ciudad" />
+                            </Border>
+                            <Label Text="Monto inicial" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource FieldShellStyle}">
+                                <Entry x:Name="MontoInicialEntry" Placeholder="$ 0.00" Keyboard="Numeric" TextChanged="OnMontoInicialChanged" />
+                            </Border>
+                            <Label Text="Pago mensual" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource Navy}" />
+                            <Border Grid.Row="4" Grid.Column="1" BackgroundColor="{StaticResource TealSoft}" Stroke="#B9E8E2" StrokeThickness="1" StrokeShape="RoundRectangle 12" Padding="8,0">
+                                <Entry x:Name="PagoMensualEntry" Placeholder="$ 0.00" IsReadOnly="True" TextColor="{StaticResource Teal}" FontAttributes="Bold" />
+                            </Border>
+                        </Grid>
+                        <Label Text="El saldo se divide en cuatro cuotas con un recargo del 4% por cuota." FontSize="12" TextColor="{StaticResource Muted}" LineBreakMode="WordWrap" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border x:Name="StudentCard" Grid.Column="1" Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="16">
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="Datos del estudiante" Style="{StaticResource SectionTitleStyle}" />
+                            <Label Text="Información personal del inscrito" FontSize="13" TextColor="{StaticResource Muted}" />
+                        </VerticalStackLayout>
+                        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*" ColumnSpacing="10" RowSpacing="8">
+                            <Label Text="Nombre" Grid.Row="0" Grid.Column="0" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource Muted}" />
+                            <Label Text="Apellido" Grid.Row="0" Grid.Column="1" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource Muted}" />
+                            <Label Text="Edad" Grid.Row="0" Grid.Column="2" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource Muted}" />
+                            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource FieldShellStyle}" Padding="5,0">
+                                <Entry x:Name="NombreEntry" Placeholder="Nombre" FontSize="13" />
+                            </Border>
+                            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource FieldShellStyle}" Padding="5,0">
+                                <Entry x:Name="ApellidoEntry" Placeholder="Apellido" FontSize="13" />
+                            </Border>
+                            <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource FieldShellStyle}" Padding="5,0">
+                                <Entry x:Name="EdadEntry" Placeholder="Años" Keyboard="Numeric" FontSize="13" />
+                            </Border>
+                        </Grid>
+                        <Border BackgroundColor="{StaticResource FieldFill}" Stroke="{StaticResource Border}" StrokeThickness="1" StrokeShape="RoundRectangle 14" Padding="14">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Inversión del curso" FontSize="13" TextColor="{StaticResource Muted}" />
+                                <Label Text="$1,500.00" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Navy}" />
+                                <Label Text="Monto inicial más cuatro cuotas mensuales" FontSize="12" TextColor="{StaticResource Muted}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Button x:Name="VerResumenButton" Grid.Row="1" Grid.ColumnSpan="2" Text="VER RESUMEN" Clicked="OnVerResumenClicked" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
